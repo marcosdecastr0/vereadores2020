@@ -1,0 +1,477 @@
+
+    <html>
+        <head>
+            <title>: </title>
+    
+    <style>
+/*
+
+RESPONSTABLE 2.0 by jordyvanraaij
+  Designed mobile first!
+
+If you like this solution, you might also want to check out the 1.0 version:
+  https://gist.github.com/jordyvanraaij/9069194
+
+*/
+.responstable {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border-radius: 10px;
+  border: 1px solid #167F92;
+  font-size: .75em;
+}
+
+.responstable tr {
+  border: 1px solid #D9E4E6;
+}
+.responstable tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+.responstable th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #167F92;
+  color: #FFF;
+  padding: .5em;
+}
+.responstable th:first-child {
+  display: table-cell;
+  text-align: center;
+}
+.responstable th:nth-child(2) {
+  display: table-cell;
+}
+.responstable th:nth-child(2) span {
+  display: none;
+}
+.responstable th:nth-child(2):after {
+  content: attr(data-th);
+}
+@media (min-width: 480px) {
+  .responstable th:nth-child(2) span {
+    display: block;
+  }
+  .responstable th:nth-child(2):after {
+    display: none;
+  }
+}
+.responstable td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 7em;
+}
+.responstable td:first-child {
+  display: table-cell;
+  text-align: center;
+  border-right: 1px solid #D9E4E6;
+}
+@media (min-width: 480px) {
+  .responstable td {
+    border: 1px solid #D9E4E6;
+  }
+}
+.responstable th, .responstable td {
+  text-align: left;
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .responstable th, .responstable td {
+    display: table-cell;
+    padding: 1em;
+  }
+}
+
+body {
+  padding: 0 2em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+}
+
+h1 {
+  font-family: Verdana;
+  font-weight: normal;
+  color: #024457;
+}
+
+h1 span {
+  color: #167F92;
+}
+</style>
+        </head>
+    
+        <body>
+            <h1></h1>
+            <h2></h2>
+            <table class="responstable">
+    <tr>
+<th>aa_eleicao</th>
+<th>nm_regiao</th>
+<th>sg_uf</th>
+<th>nm_municipio</th>
+<th>sg_partido</th>
+<th>pc_candidato</th>
+<th>qt_votos_validos</th>
+<th>qt_votos_nom_validos</th>
+<th>qt_total_vt_leg_validos</th>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>AGIR</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>AVANTE</td>
+<td>0,0406</td>
+<td>2275</td>
+<td>2267</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>CIDADANIA</td>
+<td>0,0004</td>
+<td>24</td>
+<td>11</td>
+<td>13</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>DC</td>
+<td>0,0006</td>
+<td>35</td>
+<td>0</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>MDB</td>
+<td>0,0149</td>
+<td>832</td>
+<td>801</td>
+<td>31</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>NOVO</td>
+<td>0,0046</td>
+<td>258</td>
+<td>185</td>
+<td>73</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PATRIOTA</td>
+<td>0,0161</td>
+<td>902</td>
+<td>892</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PC do B</td>
+<td>0,0081</td>
+<td>451</td>
+<td>433</td>
+<td>18</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PCB</td>
+<td>0,0008</td>
+<td>46</td>
+<td>40</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PCO</td>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PDT</td>
+<td>0,0092</td>
+<td>517</td>
+<td>450</td>
+<td>67</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PL</td>
+<td>0,2273</td>
+<td>12726</td>
+<td>12537</td>
+<td>189</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PMB</td>
+<td>0,0002</td>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PMN</td>
+<td>0,0035</td>
+<td>195</td>
+<td>190</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PODE</td>
+<td>0,0033</td>
+<td>182</td>
+<td>176</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PP</td>
+<td>0,0061</td>
+<td>340</td>
+<td>301</td>
+<td>39</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PROS</td>
+<td>0,0043</td>
+<td>242</td>
+<td>241</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PRTB</td>
+<td>0,0003</td>
+<td>16</td>
+<td>14</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PSB</td>
+<td>0,0028</td>
+<td>159</td>
+<td>157</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PSC</td>
+<td>0,0053</td>
+<td>299</td>
+<td>258</td>
+<td>41</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PSD</td>
+<td>0,2783</td>
+<td>15581</td>
+<td>15411</td>
+<td>170</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PSDB</td>
+<td>0,005</td>
+<td>279</td>
+<td>260</td>
+<td>19</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PSOL</td>
+<td>0,0068</td>
+<td>378</td>
+<td>346</td>
+<td>32</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PSTU</td>
+<td>0,0001</td>
+<td>4</td>
+<td>0</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PT</td>
+<td>0,1691</td>
+<td>9466</td>
+<td>8981</td>
+<td>485</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PTB</td>
+<td>0,1544</td>
+<td>8642</td>
+<td>8601</td>
+<td>41</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>PV</td>
+<td>0,001</td>
+<td>55</td>
+<td>41</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>REDE</td>
+<td>0,0014</td>
+<td>80</td>
+<td>77</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>REPUBLICANOS</td>
+<td>0,0158</td>
+<td>883</td>
+<td>869</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>SOLIDARIEDADE</td>
+<td>0,0018</td>
+<td>101</td>
+<td>96</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>UNIÃO</td>
+<td>0,0178</td>
+<td>999</td>
+<td>985</td>
+<td>14</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SUDESTE</td>
+<td>MG</td>
+<td>MURIAÉ</td>
+<td>UP</td>
+<td>0,0001</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+</tr>
+
+                </table>
+            </body>
+        </html>
+        

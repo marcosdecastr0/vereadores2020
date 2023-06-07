@@ -1,0 +1,411 @@
+
+    <html>
+        <head>
+            <title>: </title>
+    
+    <style>
+/*
+
+RESPONSTABLE 2.0 by jordyvanraaij
+  Designed mobile first!
+
+If you like this solution, you might also want to check out the 1.0 version:
+  https://gist.github.com/jordyvanraaij/9069194
+
+*/
+.responstable {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border-radius: 10px;
+  border: 1px solid #167F92;
+  font-size: .75em;
+}
+
+.responstable tr {
+  border: 1px solid #D9E4E6;
+}
+.responstable tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+.responstable th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #167F92;
+  color: #FFF;
+  padding: .5em;
+}
+.responstable th:first-child {
+  display: table-cell;
+  text-align: center;
+}
+.responstable th:nth-child(2) {
+  display: table-cell;
+}
+.responstable th:nth-child(2) span {
+  display: none;
+}
+.responstable th:nth-child(2):after {
+  content: attr(data-th);
+}
+@media (min-width: 480px) {
+  .responstable th:nth-child(2) span {
+    display: block;
+  }
+  .responstable th:nth-child(2):after {
+    display: none;
+  }
+}
+.responstable td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 7em;
+}
+.responstable td:first-child {
+  display: table-cell;
+  text-align: center;
+  border-right: 1px solid #D9E4E6;
+}
+@media (min-width: 480px) {
+  .responstable td {
+    border: 1px solid #D9E4E6;
+  }
+}
+.responstable th, .responstable td {
+  text-align: left;
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .responstable th, .responstable td {
+    display: table-cell;
+    padding: 1em;
+  }
+}
+
+body {
+  padding: 0 2em;
+  font-family: Arial, sans-serif;
+  color: #024457;
+  background: #f2f2f2;
+}
+
+h1 {
+  font-family: Verdana;
+  font-weight: normal;
+  color: #024457;
+}
+
+h1 span {
+  color: #167F92;
+}
+</style>
+        </head>
+    
+        <body>
+            <h1></h1>
+            <h2></h2>
+            <table class="responstable">
+    <tr>
+<th>aa_eleicao</th>
+<th>sg_partido</th>
+<th>nr_partido</th>
+<th>pc_candidato</th>
+<th>qt_votos_validos</th>
+<th>qt_votos_nom_validos</th>
+<th>qt_total_vt_leg_validos</th>
+</tr>
+<tr>
+<td>2022</td>
+<td>AGIR</td>
+<td>36</td>
+<td>0,0015</td>
+<td>158868</td>
+<td>145728</td>
+<td>13140</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>AVANTE</td>
+<td>70</td>
+<td>0,02</td>
+<td>2192518</td>
+<td>2156992</td>
+<td>35526</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>CIDADANIA</td>
+<td>23</td>
+<td>0,0147</td>
+<td>1614106</td>
+<td>1558459</td>
+<td>55647</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>DC</td>
+<td>27</td>
+<td>0,0009</td>
+<td>97741</td>
+<td>86594</td>
+<td>11147</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>MDB</td>
+<td>15</td>
+<td>0,0726</td>
+<td>7950895</td>
+<td>7760260</td>
+<td>190635</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>NOVO</td>
+<td>30</td>
+<td>0,0124</td>
+<td>1354754</td>
+<td>1213753</td>
+<td>141001</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PATRIOTA</td>
+<td>51</td>
+<td>0,0139</td>
+<td>1526570</td>
+<td>1494232</td>
+<td>32338</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PC do B</td>
+<td>65</td>
+<td>0,0105</td>
+<td>1154712</td>
+<td>1104941</td>
+<td>49771</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PCB</td>
+<td>21</td>
+<td>0,0008</td>
+<td>85511</td>
+<td>64250</td>
+<td>21261</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PCO</td>
+<td>29</td>
+<td>0,0001</td>
+<td>7308</td>
+<td>3598</td>
+<td>3710</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PDT</td>
+<td>12</td>
+<td>0,035</td>
+<td>3828367</td>
+<td>3515491</td>
+<td>312876</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PL</td>
+<td>22</td>
+<td>0,1662</td>
+<td>18200300</td>
+<td>17459916</td>
+<td>740384</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PMB</td>
+<td>35</td>
+<td>0,0008</td>
+<td>83055</td>
+<td>73499</td>
+<td>9556</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PMN</td>
+<td>33</td>
+<td>0,0023</td>
+<td>256578</td>
+<td>240563</td>
+<td>16015</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PODE</td>
+<td>19</td>
+<td>0,033</td>
+<td>3610634</td>
+<td>3189389</td>
+<td>421245</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PP</td>
+<td>11</td>
+<td>0,0794</td>
+<td>8692918</td>
+<td>8497158</td>
+<td>195760</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PROS</td>
+<td>90</td>
+<td>0,0073</td>
+<td>799661</td>
+<td>787849</td>
+<td>11812</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PRTB</td>
+<td>28</td>
+<td>0,0027</td>
+<td>293392</td>
+<td>277718</td>
+<td>15674</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PSB</td>
+<td>40</td>
+<td>0,0381</td>
+<td>4174899</td>
+<td>4027872</td>
+<td>147027</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PSC</td>
+<td>20</td>
+<td>0,0178</td>
+<td>1944678</td>
+<td>1895691</td>
+<td>48987</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PSD</td>
+<td>55</td>
+<td>0,0758</td>
+<td>8293956</td>
+<td>8094289</td>
+<td>199667</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PSDB</td>
+<td>45</td>
+<td>0,0302</td>
+<td>3309061</td>
+<td>3154895</td>
+<td>154166</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PSOL</td>
+<td>50</td>
+<td>0,0352</td>
+<td>3852246</td>
+<td>3775574</td>
+<td>76672</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PSTU</td>
+<td>16</td>
+<td>0,0003</td>
+<td>27995</td>
+<td>16518</td>
+<td>11477</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PT</td>
+<td>13</td>
+<td>0,1209</td>
+<td>13236698</td>
+<td>11972890</td>
+<td>1263808</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PTB</td>
+<td>14</td>
+<td>0,013</td>
+<td>1422652</td>
+<td>1367536</td>
+<td>55116</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>PV</td>
+<td>43</td>
+<td>0,0087</td>
+<td>954578</td>
+<td>902212</td>
+<td>52366</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>REDE</td>
+<td>18</td>
+<td>0,0072</td>
+<td>782917</td>
+<td>761451</td>
+<td>21466</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>REPUBLICANOS</td>
+<td>10</td>
+<td>0,0695</td>
+<td>7610894</td>
+<td>7495836</td>
+<td>115058</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>SOLIDARIEDADE</td>
+<td>77</td>
+<td>0,0155</td>
+<td>1702519</td>
+<td>1663309</td>
+<td>39210</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>UNIÃO</td>
+<td>44</td>
+<td>0,0933</td>
+<td>10215433</td>
+<td>10043627</td>
+<td>171806</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>UP</td>
+<td>80</td>
+<td>0,0005</td>
+<td>54586</td>
+<td>48495</td>
+<td>6091</td>
+</tr>
+
+                </table>
+            </body>
+        </html>
+        
